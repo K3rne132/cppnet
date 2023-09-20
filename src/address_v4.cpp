@@ -41,10 +41,10 @@ bool net::address_v4::make_address(const char* rawaddress) {
 }
 
 void net::address_v4::make_address(uint8_t octets[4]) {
-	make_address(IPV4Numeric(octets));
+	make_address(IPv4Numeric(octets));
 }
 
-void net::address_v4::make_address(IPV4Numeric numeric) {
+void net::address_v4::make_address(IPv4Numeric numeric) {
 	_Numeric = numeric;
 	Address.clear();
 	for (uint8_t i = 0; i < 4; i++) {

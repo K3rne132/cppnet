@@ -68,10 +68,10 @@ bool net::address_v6::make_address(const char* rawaddress) {
 }
 
 void net::address_v6::make_address(uint16_t words[8]) {
-	make_address(IPV6Numeric(words));
+	make_address(IPv6Numeric(words));
 }
 
-void net::address_v6::make_address(IPV6Numeric numeric) {
+void net::address_v6::make_address(IPv6Numeric numeric) {
 	_Numeric = numeric;
 	Address.clear();
 	std::stringstream stream;

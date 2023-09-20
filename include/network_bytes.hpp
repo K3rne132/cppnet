@@ -24,6 +24,6 @@ namespace net {
 		}
 	};
 
-	typedef network_bytes<uint8_t, 4> IPV4Numeric;
-	typedef network_bytes<uint16_t, 8> IPV6Numeric;
+	typedef network_bytes<uint8_t, 4> IPv4Numeric;
+	typedef network_bytes<uint16_t, 8> IPv6Numeric;
 } // namespace net
