@@ -59,7 +59,7 @@ namespace net {
 		// Listens on port - limited connections by maxconn
 		int32_t listen(const char* port, int32_t maxconn) {
 			addrinfo hints = {};
-			hints.ai_family = traits::Family();
+			hints.ai_family = traits::Family;
 			hints.ai_socktype = _SockType;
 			hints.ai_protocol = _Protocol;
 			hints.ai_flags = AI_PASSIVE;

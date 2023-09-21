@@ -1,7 +1,6 @@
 #pragma once
 #include "system.hpp"
 #include <cinttypes>
-#include "network_bytes.hpp"
 #include "address_v4.hpp"
 #include "address_v6.hpp"
 
@@ -17,19 +16,16 @@ namespace net {
 	
 	template<>
 	struct address_info_<IPVersion::UNUSED> {
-		using _Bytes = network_bytes<void, 0>;
 		using _Type = void;
 	};
 
 	template<>
 	struct address_info_<IPVersion::IPv4> {
-		using _Bytes = IPv4Numeric;
 		using _Type = address_v4;
 	};
 
 	template<>
 	struct address_info_<IPVersion::IPv6> {
-		using _Bytes = IPv6Numeric;
 		using _Type = address_v6;
 	};
 
@@ -37,7 +33,6 @@ namespace net {
 	class network_traits {
 	public:
 		static const int32_t Family;
-		using Numeric = typename address_info_<_Version>::_Bytes;
 		using Address = typename address_info_<_Version>::_Type;
 	};
 
